@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { Analytics } from "@vercel/analytics/next"
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -11,6 +12,8 @@ function MyApp({ Component, pageProps }) {
         page_title: document.title,
         page_location: window.location.href,
       });
+      // Vercel Analytics initialization
+      Analytics();
     }
 
     // Preload critical resources
